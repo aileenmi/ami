@@ -60,9 +60,9 @@ public class Game extends JPanel implements Runnable, MouseListener, KeyListener
 		
 		frame.add(this);
 		
-		s = new Sprite(100, WIDTH/40 );
+		s = new Sprite(200, WIDTH/40);
 		bgFront = new Background(0, s.getDx(), 0);
-		bgBack = new Background(0, s.getDx() - 3, 2);
+		bgBack = new Background(-100, s.getDx() - 3, 2);
 		s.setBackground(bgFront, bgBack);
 		
 		frame.setVisible(true);
@@ -137,14 +137,12 @@ public class Game extends JPanel implements Runnable, MouseListener, KeyListener
 	
 	@Override
 	public void mouseClicked(MouseEvent e) {
-		if(e.getSource() == day)
-		{
+		if(e.getSource() == day) {
 			bgFront.setImage(0);
 			bgBack.setImage(2);
 			day.setFocusable(false);
 		}
-		else if(e.getSource() == night)
-		{
+		else if(e.getSource() == night) {
 			bgFront.setImage(1);
 			bgBack.setImage(3);
 			night.setFocusable(false);

@@ -7,7 +7,6 @@ import javax.swing.ImageIcon;
 public class Background {
 
 	Image image;
-	
 	private int x;
 	private int dx;
 	private int bgOption;

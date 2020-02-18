@@ -1,7 +1,6 @@
 package finalProject;
 
 import java.awt.Image;
-
 import javax.swing.ImageIcon;
 
 public class Sprite {
@@ -49,13 +48,15 @@ public class Sprite {
 		x -= dx;
 		bgBack.setDx(true);
 		bgBack.move();
-		if(x < 100) {
-			if(!bgBack.getReachBegin())
-			{
+		if(x < 200) {
+			if(!bgBack.getReachBegin()) {
+				x = 200;
 				bgFront.setDx(true);
 				bgFront.move();
 			}
-			x = 100;
+			else if(x < 50) {
+				x = 50;
+			}
 		}
 
 	}
@@ -75,17 +76,14 @@ public class Sprite {
 		x += dx;
 		bgBack.setDx(false);
 		bgBack.move();
-		if(x > Game.WIDTH - 200)
-		{
-			if(!bgBack.getReachEnd())
-			{
+		if(x > Game.WIDTH - 200) {
+			if(!bgBack.getReachEnd()) {
 				x = Game.WIDTH - 200;
 				bgFront.setDx(false);
 				bgFront.move();
 			}
-			else if( x > Game.WIDTH - 100)
-			{
-				x = Game.WIDTH - 100;
+			else if(x > Game.WIDTH - 50) {
+				x = Game.WIDTH - 50;
 			}
 		}
 	}
